@@ -1,4 +1,13 @@
-import { createApp } from 'vue'
-import App from './App.vue'
+import Autocomplete from "@/components/Autocomplete/Autocomplete";
 
-createApp(App).mount('#app')
+const ComponentLibrary = {
+    install(Vue, options = {}) {
+        Vue.component('Autocomplete', Autocomplete)
+    }
+}
+
+export default ComponentLibrary
+
+if (typeof window !== 'undefined' && window.Vue) {
+    window.Vue.use(ComponentLibrary)
+}
