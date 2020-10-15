@@ -1,0 +1,32 @@
+{
+  "name": "vue3-autocomplete",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "test:unit": "vue-cli-service test:unit"
+  },
+  "dependencies": {
+    "vue": "^3.0.0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-unit-jest": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/compiler-sfc": "^3.0.0",
+    "@vue/test-utils": "^2.0.0-0",
+    "typescript": "~3.9.3",
+    "vue-jest": "^5.0.0-0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "jest": {
+    "preset": "@vue/cli-plugin-unit-jest/presets/no-babel",
+    "transform": {
+      "^.+\\.vue$": "vue-jest"
+    }
+  }
+}
