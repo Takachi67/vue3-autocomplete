@@ -1,6 +1,6 @@
 {
   "name": "vue3-autocomplete",
-  "version": "0.1.0",
+  "version": "0.9.0",
   "private": false,
   "unpkg": "dist/vue3-autocomplete.umd.min.js",
   "jsdelivr": "dist/vue3-autocomplete.umd.min.js",
@@ -18,14 +18,15 @@
   },
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build --target lib --name vue3-autocomplete src/main.js",
+    "build": "vue-cli-service build --target lib --name vue3-autocomplete src/main.ts",
     "prepublishOnly": "$npm_execpath build",
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
     "@vue/cli-plugin-typescript": "^4.5.7",
-    "@vue/composition-api": "^1.0.0-beta.17",
     "axios": "^0.20.0",
+    "sass": "^1.27.0",
+    "sass-loader": "^10.0.3",
     "typescript": "^4.0.3",
     "vue": "^3.0.0"
   },

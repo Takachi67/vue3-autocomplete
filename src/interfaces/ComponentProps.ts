@@ -1,6 +1,11 @@
 export default interface ComponentProps {
 
-    list: Array<any>
+    debounce: number
+    inputClass: Array<String>
+    results: Array<any>
+    resultsContainerClass: Array<String>
+    resultsItemClass: Array<String>
+    max: number
 
     displayItem(item: Object|String): String
 
