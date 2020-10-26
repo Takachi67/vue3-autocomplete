@@ -1,25 +1,83 @@
 # vue3-autocomplete
 
-## Project setup
+## Table of contents
+
+* [Installation](#installation)
+* [Usage](#usage)
+
+## Installation
+
+Using npm
 ```
-npm install
+npm install vue3-autocomplete
 ```
 
-### Compiles and hot-reloads for development
+Using yarn
 ```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
+yarn add vue3-autocomplete
 ```
 
-### Run your unit tests
-```
-npm run test:unit
+## Usage
+
+Load the component globally...
+
+```ts
+import App from './App.vue' // Or whatever you need
+import Autocomplete from 'vue3-autocomplete'
+// Optional: Import default CSS
+import 'vue3-autocomplete/dist/vue3-autocomplete.css'
+
+let app = createApp(App)
+app.component('Autocomplete', Autocomplete)
+app.mount('#app')
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
-# vue3-autocomplete
+... Or locally into your component.
+
+```ts
+import Autocomplete from 'vue3-autocomplete'
+// Optional: Import default CSS
+import 'vue3-autocomplete/dist/vue3-autocomplete.css'
+
+export default {
+    name: 'YourComponentName',
+    components: {
+        Autocomplete
+    }
+}
+```
+
+Use the component into your template.
+
+```html
+<template>
+    <div>
+        <Autocomplete
+            @input="getItems"
+            :results="items"
+        ></Autocomplete>
+    </div>
+</template>
+```
+
+## Properties
+
+| Property | Type  | Description | Required | Default |
+| :------: | :---: | :---------: | :------: | :-----: |
+| results | Array | Items to display in the results list | No | [] |
+| display-item | Function | Describes how to render each item in results | No | **return** item.name |
+| debounce | Integer | Time to wait before each call to the ***@input*** event | No | 0 |
+| max | Integer | Define a render limit for **results** items | No | 10 |
+| input-class | Array | Override input default classes | No | [] |
+| results-container-class | Array | Override results container default classes | No | [] |
+| results-item-class | Array | Override results item default classes | No | [] |
+
+## Events
+
+| Event | Description |
+| :---: | :---------: |
+| **@input** | Triggered on user input, should update the local results list |
+
+## License
+
+MIT

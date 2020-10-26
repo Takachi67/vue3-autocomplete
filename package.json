@@ -1,13 +1,14 @@
 {
   "name": "vue3-autocomplete",
-  "version": "0.9.0",
+  "version": "1.0.0",
   "private": false,
+  "main": "dist/vue3-autocomplete.common.js",
   "unpkg": "dist/vue3-autocomplete.umd.min.js",
   "jsdelivr": "dist/vue3-autocomplete.umd.min.js",
+  "keywords": ["vue", "vuejs", "vue3", "autocomplete", "select", "search"],
   "homepage": "",
   "files": [
-    "dist/*",
-    "src/*"
+    "dist/*"
   ],
   "repository": {
     "type": "git",
@@ -18,7 +19,7 @@
   },
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build --target lib --name vue3-autocomplete src/main.ts",
+    "build": "vue-cli-service build --target lib --name vue3-autocomplete src/Autocomplete.vue",
     "prepublishOnly": "$npm_execpath build",
     "test:unit": "vue-cli-service test:unit"
   },

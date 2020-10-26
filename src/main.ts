@@ -1,14 +1,15 @@
 // @ts-ignore
-import Autocomplete from '@/components/Autocomplete/Autocomplete'
+import Autocomplete from './Autocomplete'
 
-const ComponentLibrary = {
+const AutocompletePlugin = {
     // @ts-ignore
     install(Vue, options = {}) {
         Vue.component('Autocomplete', Autocomplete)
     }
 }
 
-export default ComponentLibrary
+export default AutocompletePlugin
+export { Autocomplete }
 
 // @ts-ignore
 if (typeof window !== 'undefined' && window.Vue) {

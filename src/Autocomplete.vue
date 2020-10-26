@@ -23,7 +23,7 @@
 
 <script lang="ts">
 import { ref, computed, SetupContext, onMounted } from 'vue'
-import ComponentProps from '../../interfaces/ComponentProps'
+import ComponentProps from './interfaces/ComponentProps'
 
 export default {
   name: 'Autocomplete',
