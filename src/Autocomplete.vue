@@ -116,7 +116,7 @@ export default {
      * Return class(es) for input element
      */
     const getInputClass = computed(() => {
-      return props.inputClass.length > 0 ? props.inputClass.length : ['vue3-input']
+      return props.inputClass.length > 0 ? props.inputClass : ['vue3-input']
     })
 
     /**
@@ -124,7 +124,7 @@ export default {
      */
     const getResultsContainerClass = computed(() => {
       return props.resultsContainerClass.length > 0 ?
-          props.resultsContainerClass.length :
+          props.resultsContainerClass :
           ['vue3-results-container']
     })
 
@@ -133,7 +133,7 @@ export default {
      */
     const getResultsItemClass = computed(() => {
       return props.resultsItemClass.length > 0 ?
-          props.resultsItemClass.length :
+          props.resultsItemClass :
           ['vue3-results-item']
     })
 
