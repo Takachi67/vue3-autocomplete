@@ -77,6 +77,7 @@ Use the component into your template.
 | Event | Description |
 | :---: | :---------: |
 | **@input** | Triggered on user input, should update the local results list |
+| **@onSelect** | Triggered when user click on a list item and return the selected item |
 
 ## License
 
