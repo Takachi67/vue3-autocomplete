@@ -4,6 +4,7 @@
         ref="autocompleteRef"
         type="text"
         @input="handleInput"
+        v-bind="{...$attrs}"
         v-model="searchText"
         :class="getInputClass"
         @focus="displayResults"
