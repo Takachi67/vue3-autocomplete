@@ -1,11 +1,18 @@
 {
   "name": "vue3-autocomplete",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "private": false,
   "main": "dist/vue3-autocomplete.common.js",
   "unpkg": "dist/vue3-autocomplete.umd.min.js",
   "jsdelivr": "dist/vue3-autocomplete.umd.min.js",
-  "keywords": ["vue", "vuejs", "vue3", "autocomplete", "select", "search"],
+  "keywords": [
+    "vue",
+    "vuejs",
+    "vue3",
+    "autocomplete",
+    "select",
+    "search"
+  ],
   "homepage": "",
   "files": [
     "dist/*"
