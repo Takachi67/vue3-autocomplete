@@ -28,6 +28,7 @@ import ComponentProps from './interfaces/ComponentProps'
 
 export default {
   name: 'Autocomplete',
+  inheritAttrs: false,
   props: {
     debounce: {
       type: Number,
