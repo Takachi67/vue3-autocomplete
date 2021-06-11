@@ -17,7 +17,8 @@
           :class="getResultsItemClass"
           @click="clickItem(item)"
           @mousedown.prevent
-      >{{ displayItem(item) }}</div>
+          v-html="displayItem(item)"
+      ></div>
     </div>
   </div>
 </template>
