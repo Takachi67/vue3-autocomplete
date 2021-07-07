@@ -7,8 +7,10 @@
         v-bind="$attrs"
         v-model="searchText"
         :class="getInputClass"
+        :placeholder="placeHolder"
         @focus="displayResults"
         @blur="hideResults"
+       
     />
     <div :style="{ width: inputWidth + 'px' }" :class="getResultsContainerClass" v-if="shouldShowResults">
       <div
@@ -60,7 +62,11 @@ export default {
         // @ts-ignore
         return typeof item === 'string' ? item : item.name
       }
-    }
+    },
+     placeHolder: {
+      type: String,
+      default: ''
+    },
   },
   emits: [
     'input',
