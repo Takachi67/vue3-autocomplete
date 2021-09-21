@@ -1,6 +1,6 @@
 {
   "name": "vue3-autocomplete",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "private": false,
   "main": "dist/vue3-autocomplete.common.js",
   "unpkg": "dist/vue3-autocomplete.umd.min.js",

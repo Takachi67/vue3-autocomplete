@@ -6,12 +6,23 @@
         @input="handleInput"
         v-bind="$attrs"
         v-model="searchText"
+        :placeholder="placeholder"
         :class="getInputClass"
         @focus="displayResults"
         @blur="hideResults"
     />
     <div :style="{ width: inputWidth + 'px' }" :class="getResultsContainerClass" v-if="shouldShowResults">
       <div
+          v-if="useHtmlForResults"
+          v-for="item in filteredResults"
+          :key="item"
+          :class="getResultsItemClass"
+          @click="clickItem(item)"
+          @mousedown.prevent
+          v-html="displayItem(item)"
+      ></div>
+      <div
+          v-if="!useHtmlForResults"
           v-for="item in filteredResults"
           :key="item"
           :class="getResultsItemClass"
@@ -38,9 +49,17 @@ export default {
       type: Array,
       default: []
     },
+    useHtmlForResults: {
+      type: Boolean,
+      default: false
+    },
     max: {
       type: Number,
       default: 10
+    },
+    placeholder: {
+      type: String,
+      default: ''
     },
     results: {
       type: Array,
@@ -69,10 +88,10 @@ export default {
   setup(props: ComponentProps, context: SetupContext) {
     const autocompleteRef = ref()
 
-    let inputWidth = ref(0)
-    let searchText = ref('')
-    let timeout: NodeJS.Timeout
-    let showResults = ref(true)
+    let inputWidth = ref(0),
+        searchText = ref(''),
+        timeout: NodeJS.Timeout,
+        showResults = ref(true)
 
     /**
      * Same as Vue2 'mounted' function, used to get refs correctly
@@ -115,6 +134,14 @@ export default {
     }
 
     /**
+     * Manually update the displayed text in the input
+     * @param value
+     */
+    function setText(value: string) {
+      searchText.value = value
+    }
+
+    /**
      * Return class(es) for input element
      */
     const getInputClass = computed(() => {
@@ -142,7 +169,7 @@ export default {
     /**
      * Show results depending on results length and showResults boolean
      */
-    let shouldShowResults = computed(() => {
+    const shouldShowResults = computed(() => {
       return showResults.value && (props.results.length > 0)
     })
 
@@ -165,6 +192,7 @@ export default {
       hideResults,
       handleInput,
       clickItem,
+      setText,
       filteredResults,
       getInputClass,
       getResultsContainerClass,

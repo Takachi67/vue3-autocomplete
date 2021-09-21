@@ -68,6 +68,8 @@ Use the component into your template.
 | display-item | Function | Describes how to render each item in results | No | **return** item.name |
 | debounce | Integer | Time to wait before each call to the ***@input*** event | No | 0 |
 | max | Integer | Define a render limit for **results** items | No | 10 |
+| placeholder | String | Default input placeholder | No | '' |
+| use-html-for-results | Boolean | If true, displayItem method will display results as html | No | false |
 | input-class | Array | Override input default classes | No | [] |
 | results-container-class | Array | Override results container default classes | No | [] |
 | results-item-class | Array | Override results item default classes | No | [] |

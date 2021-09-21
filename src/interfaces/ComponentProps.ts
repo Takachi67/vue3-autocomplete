@@ -5,7 +5,9 @@ export default interface ComponentProps {
     results: Array<any>
     resultsContainerClass: Array<String>
     resultsItemClass: Array<String>
-    max: number
+    max: number,
+    placeholder: String,
+    useHtmlForResults: Boolean
 
     displayItem(item: Object|String): String
 
