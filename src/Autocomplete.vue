@@ -105,6 +105,7 @@ export default {
      * @param { InputEvent } e
      */
     function handleInput(e: any) {
+      showResults.value = true
       clearTimeout(timeout)
       timeout = setTimeout(() => {
         context.emit('input', e.target.value)
